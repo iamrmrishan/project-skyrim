@@ -2,9 +2,22 @@ import Link from 'next/link';
 import ThemeChanger from './DarkSwitch';
 import Image from 'next/image';
 import { Disclosure } from '@headlessui/react';
+import { useEffect } from 'react';
 
 const Navbar = () => {
-  const navigation = ['Flights', 'Services', 'Visa', 'Locations'];
+  const navigation = ['Flights', 'Services', 'Reviews', 'Find Us'];
+  // Function to handle scrolling to a particular element
+  const scrollToElement = (id) => {
+    const element = document.getElementById(id);
+    element.scrollIntoView({ behavior: 'smooth' });
+  };
+  // useEffect hook to scroll to the element when the component mounts
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      scrollToElement(hash.substring(1));
+    }
+  }, []);
 
   return (
     <div className="w-full">
@@ -59,17 +72,17 @@ const Navbar = () => {
                     {navigation.map((item, index) => (
                       <Link
                         key={index}
-                        href="/"
+                        href="#reviews"
                         className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
                       >
                         {item}
                       </Link>
                     ))}
                     <Link
-                      href="/"
+                      href="#footer"
                       className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5"
                     >
-                     Contact Us
+                      Contact Us
                     </Link>
                   </>
                 </Disclosure.Panel>

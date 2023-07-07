@@ -1,7 +1,7 @@
-import React from "react";
-import Container from "./container";
-import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/24/solid";
+import React from 'react';
+import Container from './container';
+import { Disclosure } from '@headlessui/react';
+import { ChevronUpIcon } from '@heroicons/react/24/solid';
 
 const Faq = () => {
   return (
@@ -16,7 +16,7 @@ const Faq = () => {
                     <span>{item.question}</span>
                     <ChevronUpIcon
                       className={`${
-                        open ? "transform rotate-180" : ""
+                        open ? 'transform rotate-180' : ''
                       } w-5 h-5 text-indigo-500`}
                     />
                   </Disclosure.Button>
@@ -31,26 +31,36 @@ const Faq = () => {
       </div>
     </Container>
   );
-}
+};
 
 const faqdata = [
   {
-    question: "Is this template completely free to use?",
-    answer: "Yes, this template is completely free to use.",
+    question: 'United Kingdom',
+    answer: 'Air Tickets, Visa Assistance, Holiday Packages, Hotel Bookings, Travel Insurance',
   },
   {
-    question: "Can I use it in a commercial project?",
-    answer: "Yes, this you can.",
+    question: 'United States',
+    answer: 'Air Tickets, Visa Assistance, Holiday Packages, Hotel Bookings, Travel Insurance',
   },
   {
-    question: "What is your refund policy? ",
-    answer:
-      "If you're unhappy with your purchase for any reason, email us within 90 days and we'll refund you in full, no questions asked.",
+    question: 'Canada',
+    answer: 'Air Tickets, Visa Assistance, Holiday Packages, Hotel Bookings, Travel Insurance',
   },
   {
-    question: "Do you offer technical support? ",
-    answer:
-      "No, we don't offer technical support for free downloads. Please purchase a support plan to get 6 months of support.",
+    question: 'Australia',
+    answer: 'Air Tickets, Visa Assistance, Holiday Packages, Hotel Bookings, Travel Insurance',
+  },
+  {
+    question: 'Schengen',
+    answer: 'Air Tickets, Visa Assistance, Holiday Packages, Hotel Bookings, Travel Insurance',
+  },
+  {
+    question: 'Malayasia',
+    answer: 'Air Tickets, Visa Assistance, Holiday Packages, Hotel Bookings, Travel Insurance',
+  },
+  {
+    question: 'Dubai',
+    answer: 'Air Tickets, Visa Assistance, Holiday Packages, Hotel Bookings, Travel Insurance',
   },
 ];
 
