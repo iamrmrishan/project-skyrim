@@ -368,7 +368,7 @@ const Hero = () => {
                   />
                 </div>
               </div>
-              {/* <ReCAPTCHA ref={recaptchaRef} sitekey="6LerTLImAAAAAM6rL8QozrxJbkdSAh1hi8JdQNfi"/> */}
+              {/* <ReCAPTCHA ref={recaptchaRef} sitekey=""/> */}
 
               <div className="flex items-center justify-between">
                 <button
