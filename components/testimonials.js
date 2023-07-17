@@ -1,19 +1,25 @@
 import React from 'react';
 import Container from './container';
 
+const customStyle = {
+  overflow: "scroll",
+  // width: "1349px",
+  height: "500px",
+  border: "1px solid black"
+
+}
+
 const Testimonials = () => {
   return (
     <Container>
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
         <div className="relative w-full overflow-hidden">
-          <div className="aspect-w-16 aspect-h-9">
-            <iframe
-              className="absolute inset-0 w-full h-full"
+          <div className="aspect-w-16 aspect-h-9 overflow-auto">
+            {/* <div className='overflow-auto'> */}
+            <iframe style={customStyle}
               src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmadhavi.pathirage%2Fposts%2Fpfbid0MP91mXmLuxAKDAXcqZMSyZ7dNzMYLmKbAYKSomp6fp7afeyk6tZjzWWieZCe7pg4l&show_text=true"
-              scrolling="yes"
-              frameBorder="0"
-              allowFullScreen="true"
             />
+            {/* </div> */}
           </div>
         </div>
         <div className="relative w-full overflow-hidden">
