@@ -10,7 +10,7 @@ const Testimonials = () => {
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
         <div className="relative w-full overflow-hidden">
           <div className="aspect-w-16 aspect-h-9 overflow-auto">
-            <iframe style={{ height: "341px" }}
+            <iframe style={{ height: "321px" }}
               className="w-full"
               src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmadhavi.pathirage%2Fposts%2Fpfbid0MP91mXmLuxAKDAXcqZMSyZ7dNzMYLmKbAYKSomp6fp7afeyk6tZjzWWieZCe7pg4l&show_text=true"
             />
