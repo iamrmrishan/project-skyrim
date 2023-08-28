@@ -20,6 +20,7 @@ const PopupWidget = () => {
     email: '',
     name: '',
     message: '',
+    mobile: '',
   });
 
   const handleOnChange = (event) => {
@@ -55,21 +56,21 @@ const PopupWidget = () => {
     <div>
       {showModal && (
         <div className="fixed z-10 inset-0 flex items-center justify-center px-4 sm:px-0">
-        <div className="bg-white dark:bg-gray-800 w-full sm:w-1/3 p-6 rounded-lg shadow-lg">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-            Success!
-          </h3>
-          <p className="text-gray-900 dark:text-gray-200 mb-4">
-            We have received your message and will contact you shortly.
-          </p>
-          <button
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-400"
-            onClick={() => setShowModal(false)}
-          >
-            Close
-          </button>
+          <div className="bg-white dark:bg-gray-800 w-full sm:w-1/3 p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
+              Success!
+            </h3>
+            <p className="text-gray-900 dark:text-gray-200 mb-4">
+              We have received your message and will contact you shortly.
+            </p>
+            <button
+              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-400"
+              onClick={() => setShowModal(false)}
+            >
+              Close
+            </button>
+          </div>
         </div>
-      </div>
       )}
       <Disclosure>
         {({ open }) => (
@@ -97,7 +98,7 @@ const PopupWidget = () => {
                   strokeLinejoin="round"
                 >
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>{' '}
+                </svg>
               </Transition>
 
               <Transition
@@ -122,7 +123,7 @@ const PopupWidget = () => {
                 >
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>{' '}
+                </svg>
               </Transition>
             </Disclosure.Button>
             <Transition
@@ -175,7 +176,6 @@ const PopupWidget = () => {
                           type="text"
                           id="name"
                           placeholder="John Doe"
-                          value={inputs.name}
                           onChange={handleOnChange}
                           {...register('name', {
                             required: 'Full name is required',
@@ -204,7 +204,6 @@ const PopupWidget = () => {
                         <input
                           type="email"
                           id="email"
-                          value={inputs.email}
                           onChange={handleOnChange}
                           {...register('email', {
                             required: 'Enter your email',
@@ -227,6 +226,38 @@ const PopupWidget = () => {
                           </div>
                         )}
                       </div>
+                      <div className="mb-4">
+                        <label
+                          htmlFor="number"
+                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                        >
+                          Mobile
+                        </label>
+                        <input
+                          type="text"
+                          id="mobile"
+                          onChange={handleOnChange}
+                          {...register('mobile', {
+                            required: 'Enter your mobile number',
+                            pattern: {
+                              value: /^\d{10}$/,
+                              message: 'Please enter a valid mobile',
+                            },
+                          })}
+                          placeholder="077xxxxxxx"
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
+                            errors.mobile
+                              ? 'border-red-600 focus:border-red-600 ring-red-100'
+                              : 'border-gray-300 focus:border-indigo-600 ring-indigo-100'
+                          }`}
+                        />
+
+                        {errors.mobile && (
+                          <div className="mt-1 text-sm text-red-400 invalid-feedback">
+                            {errors.mobile.message}
+                          </div>
+                        )}
+                      </div>
 
                       <div className="mb-4">
                         <label
@@ -239,7 +270,6 @@ const PopupWidget = () => {
                         <textarea
                           rows="4"
                           id="message"
-                          value={inputs.message}
                           onChange={handleOnChange}
                           {...register('message', {
                             required: 'Enter your Message',
@@ -258,6 +288,7 @@ const PopupWidget = () => {
                           </div>
                         )}
                       </div>
+
                       <div className="mb-3">
                         <button
                           type="submit"
@@ -289,20 +320,6 @@ const PopupWidget = () => {
                           )}
                         </button>
                       </div>
-                      {/* <p
-                        className="text-xs text-center text-gray-400"
-                        id="result">
-                        <span>
-                          Powered by{" "}
-                          <a
-                            href="https://Web3Forms.com"
-                            className="text-gray-600"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Web3Forms
-                          </a>
-                        </span>
-                      </p> */}
                     </form>
                   )}
 
